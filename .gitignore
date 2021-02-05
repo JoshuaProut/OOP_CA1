@@ -24,3 +24,7 @@ hs_err_pid*
 
 # CSV files
 *.csv
+
+# idea
+*.idea
+*.iml
