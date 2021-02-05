@@ -30,7 +30,23 @@ public class University {
 		return null;
 	}
 	
+	public static boolean isIDUnique(int ID) {
+		
+		boolean found = false;
+		for(Student student : students) {
+			if(student.getID() == ID){
+				found = true;
+				break;
+			}
+		}	
+		return found;
+	}		
+		
+	
 	public static void main(String[] args) {
 		// TODO - needs to be implemented
+		
+		
 	}
+	
 }
