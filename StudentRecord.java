@@ -10,7 +10,7 @@ public class StudentRecord {
 	
 	private Boolean isAboveAverage;
 
-	public StudentRecord(Student student, Module, module, double[] marks) {
+	public StudentRecord(Student student, Module module, double[] marks) {
 		
 		this.student = student;
 		this.module = module;
@@ -25,18 +25,22 @@ public class StudentRecord {
 		}
 			
 		this.finalScore = total/count;
-		
-		// Calculates if the student is above average
-		
-		if (this.finalScore > module.getFinalAverageGrade){
+	}
+	// Calculates if the student is above average
+	public void setAboveAverage(){
+		if (this.finalScore > module.getFinalAverageGrade()){
 			this.isAboveAverage = true;
 		} else {
 			this.isAboveAverage = false;
 		}
-	}
+	}	
 	
 	public double getFinalScore(){
 		return finalScore;
+	}
+	
+	public Module getModule(){
+		return module;
 	}
 }
 

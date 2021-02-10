@@ -1,3 +1,7 @@
+
+/**
+ * @author Joshua Prout jnp207@exeter.ac.uk
+ */
 public class University {
 
 	private ModuleDescriptor[] moduleDescriptors;
@@ -10,7 +14,7 @@ public class University {
 	 * @return The number of students registered in the system.
 	 */
 	public int getTotalNumberStudents() {
-		// TODO - needs to be implemented
+		
 		return null;
 	}
 
