@@ -69,9 +69,9 @@ public class University {
 		for(Student student: students) {
 			if(student.getGpa() > highestStudent.gpa){
 				highestStudent = student;
-		
-		return highestStudent;
-			
+			}	
+		}
+		return highestStudent;		
 	}
 
 	/**
@@ -80,9 +80,12 @@ public class University {
 	public Module getBestModule() {
 		Module highestModule = module[0];
 		for (Module module: modules) {
-			if (module.get
-			
-		//return null;
+			if (module.getFinalAverageGrade() > highestModule.getFinalAverageGrade()){
+				highestModule = module;
+			}
+		}
+		
+		return highestModule;
 	}
 	
 	public boolean isIDUnique(int ID) {
@@ -99,12 +102,18 @@ public class University {
 		
 	public Student getStudentByID(int id){
 		for(Student student: students){
-			if student.getID = id{
-				return student
+			if (student.getID = id) {
+				return student;
 			}
 		}
+	}
 		
 	public Module getModuleByCode(String code) {
+		for(Module module: modules) {
+			if (Module.getModuleCode() == code){}
+		}
+	}
+	
 		
 	
 	public static void main(String[] args) {
@@ -140,139 +149,6 @@ public class University {
 		
 		// Adds student records
 		
-		Module module = new module(2019, (byte)1, 
-		student = uni.getStudentByID(1000);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1001);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1002);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1003);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1004);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		
-		
-		student = uni.getStudentByID(1005);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1006);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1007);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1008);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1009);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		
-		
-		student = uni.getStudentByID(1000);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		student = uni.getStudentByID(1001);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		student = uni.getStudentByID(1002);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		student = uni.getStudentByID(1003);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		student = uni.getStudentByID(1004);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		
-		
-		student = uni.getStudentByID(1005);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		student = uni.getStudentByID(1006);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		student = uni.getStudentByID(1007);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		student = uni.getStudentByID(1008);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		student = uni.getStudentByID(1009);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		
-		
-		student = uni.getStudentByID(1000);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1001);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1002);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1003);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1004);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1005);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1006);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1007);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1008);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1009);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		
-		
-		student = uni.getStudentByID(1000);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1001);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1002);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1003);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		student = uni.getStudentByID(1004);
-		module.addRecord(student, module, 1));
-		student.addRecord(student, module, 1));
-		
-		
-		student = uni.getStudentByID(1005);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		student = uni.getStudentByID(1006);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		student = uni.getStudentByID(1007);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		student = uni.getStudentByID(1008);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
-		student = uni.getStudentByID(1009);
-		module.addRecord(student, module, 2));
-		student.addRecord(student, module, 2));
 		
 		//Prints student transcript
 		String script = student.printTranscript();
