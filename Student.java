@@ -1,4 +1,4 @@
-package ecm1410.ca1.joshuaprout
+
 
 import java.util.Arrays;
 
@@ -74,7 +74,6 @@ public class Student {
 			byte term = module.getTerm();
 			String moduleCode = module.getModuleCode();
 			double finalScore = record.getFinalScore();
-			System.out.println(moduleCode);
 			
 			script = script + "| "+ Integer.toString(year) + " | " + Byte.toString(term)  + 
 			" | " + moduleCode + " | " + Double.toString(finalScore) + " | \n";
@@ -89,6 +88,10 @@ public class Student {
 	
 	public double getGpa(){
 		return gpa;
+	}
+	
+	public String getName(){
+		return name;
 	}
 	
 	//Object variable tester
