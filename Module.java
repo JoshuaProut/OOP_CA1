@@ -51,6 +51,11 @@ public class Module {
 	public byte getTerm(){
 		return term;
 	}
+	
+	public double getFinalAverageGrade(){
+		return finalAverageGrade;
+	}
+	
 	public String getModuleCode(){
 		String moduleCode = module.getModuleCode();
 		return moduleCode;

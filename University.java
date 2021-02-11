@@ -56,24 +56,32 @@ public class University {
 	/**
 	 * @return The number of students registered in the system.
 	 */
-	public void getTotalNumberStudents() {
+	public int getTotalNumberStudents() {
 		
-		//return null;
+		return students.length();
 	}
 
 	/**
 	 * @return The student with the highest GPA.
 	 */
-	public void getBestStudent() {
-		// TODO - needs to be implemented
-		//return null;
+	public Student getBestStudent() {
+		Student highestStudent = students[0];
+		for(Student student: students) {
+			if(student.getGpa() > highestStudent.gpa){
+				highestStudent = student;
+		
+		return highestStudent;
+			
 	}
 
 	/**
 	 * @return The module with the highest average score.
 	 */
-	public void getBestModule() {
-		// TODO - needs to be implemented
+	public Module getBestModule() {
+		Module highestModule = module[0];
+		for (Module module: modules) {
+			if (module.get
+			
 		//return null;
 	}
 	
@@ -89,16 +97,20 @@ public class University {
 		return found;
 	}		
 		
+	public Student getStudentByID(int id){
+		for(Student student: students){
+			if student.getID = id{
+				return student
+			}
+		}
+		
+	public Module getModuleByCode(String code) {
+		
 	
 	public static void main(String[] args) {
 		// TODO - needs to be implemented
 		University uni = new University();
-		
-		// Creates Module Descriptor
-		double[] weights = {0.2, 0.3, 0.5};
-		ModuleDescriptor oop = new ModuleDescriptor("ECM1410", "OOP", weights);
-		uni.addModuleDescriptor(oop);
-		
+			
 		// Adds Module Descriptors to array
 		uni.addModuleDescriptor(new ModuleDescriptor("Real World Mathematics", "ECM0002", new double[] {0.1,0.3,0.6}));
 		uni.addModuleDescriptor(new ModuleDescriptor("Programming", "ECM1400", new double[] {0.25,0.25,0.25,0.25}));
@@ -120,27 +132,150 @@ public class University {
 		uni.addStudent(new Student(1009, "Rachel", 'F'));
 		
 		
-		
-		// Creates student
-		Student student = new Student(1000, "Ana", 'F');
-		student.printAll();
-		uni.addStudent(student);
-		
-		// Creates module
-		Module module = new Module(2021, (byte)2, oop);
-		uni.addModule(module);
-		
 		// Adds student record
 		double[] marks = {70,85,60};
 		StudentRecord record = new StudentRecord(student, module, marks);
 		student.addRecord(record);
 		module.addRecord(record);
 		
+		// Adds student records
+		
+		Module module = new module(2019, (byte)1, 
+		student = uni.getStudentByID(1000);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1001);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1002);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1003);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1004);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		
+		
+		student = uni.getStudentByID(1005);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1006);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1007);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1008);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1009);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		
+		
+		student = uni.getStudentByID(1000);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		student = uni.getStudentByID(1001);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		student = uni.getStudentByID(1002);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		student = uni.getStudentByID(1003);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		student = uni.getStudentByID(1004);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		
+		
+		student = uni.getStudentByID(1005);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		student = uni.getStudentByID(1006);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		student = uni.getStudentByID(1007);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		student = uni.getStudentByID(1008);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		student = uni.getStudentByID(1009);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		
+		
+		student = uni.getStudentByID(1000);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1001);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1002);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1003);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1004);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1005);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1006);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1007);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1008);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1009);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		
+		
+		student = uni.getStudentByID(1000);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1001);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1002);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1003);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		student = uni.getStudentByID(1004);
+		module.addRecord(student, module, 1));
+		student.addRecord(student, module, 1));
+		
+		
+		student = uni.getStudentByID(1005);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		student = uni.getStudentByID(1006);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		student = uni.getStudentByID(1007);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		student = uni.getStudentByID(1008);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		student = uni.getStudentByID(1009);
+		module.addRecord(student, module, 2));
+		student.addRecord(student, module, 2));
+		
 		//Prints student transcript
 		String script = student.printTranscript();
 		System.out.println(script);
-		
-		
-	}
-	
+	}	
 }

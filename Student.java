@@ -83,8 +83,10 @@ public class Student {
 
 	public int getID() {
 		return id;
-
 	}
+	
+	public double getGpa(){
+		return gpa;
 	
 	//Object variable tester
 	public void printAll() {
