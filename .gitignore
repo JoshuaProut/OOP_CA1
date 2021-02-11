@@ -24,3 +24,10 @@ hs_err_pid*
 
 # CSV files
 *.csv
+
+# idea
+*.idea
+*.iml
+out/production/OOP_CA1/README.md
+helper.py
+helper.py
