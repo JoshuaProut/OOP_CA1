@@ -1,3 +1,5 @@
+package ecm1410.ca1.joshuaprout
+
 import java.util.Arrays;
 
 public class Module {
@@ -52,9 +54,6 @@ public class Module {
 		return term;
 	}
 	
-	public double getFinalAverageGrade(){
-		return finalAverageGrade;
-	}
 	
 	public String getModuleCode(){
 		String moduleCode = module.getModuleCode();

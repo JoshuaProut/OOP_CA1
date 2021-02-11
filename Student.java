@@ -1,3 +1,5 @@
+package ecm1410.ca1.joshuaprout
+
 import java.util.Arrays;
 
 public class Student {
@@ -81,12 +83,13 @@ public class Student {
 		return script;
 	}
 
-	public int getID() {
+	public int getId() {
 		return id;
 	}
 	
 	public double getGpa(){
 		return gpa;
+	}
 	
 	//Object variable tester
 	public void printAll() {
