@@ -47,6 +47,10 @@ public class ModuleDescriptor {
         this.ContinuousAssignmentWeights = ContinuousAssignmentWeights;
     }
 
+	/**
+	 * Gets module code
+	 */
+
     public String getModuleCode() {
         return code;
     }
