@@ -1,6 +1,9 @@
-
-
 import java.util.Arrays;
+
+/** 
+ *Represents a module in a given term and year, contains the student records of the 
+  students on the module and an average mark for all students on the module.
+ */
 
 public class Module {
 	
@@ -14,6 +17,13 @@ public class Module {
 	
 	private double finalAverageGrade;
 	
+	/**
+	 * Constructor for Module class
+	 * @param year that module is in
+	 * @param term that module is in
+	 * @param module Module Descriptor for the module
+	 */
+	
 	public Module(int year, byte term, ModuleDescriptor module) {
 		this.year = year;
 		this.term = term;
@@ -23,6 +33,10 @@ public class Module {
 		this.records = newArray;
 	}
 	
+	/**
+	 * Gets final average grade of all students on the module.
+	 * @return finalAverageGrade
+	 */
 	public double getFinalAverageGrade(){
 		// Calculate final average grade
 		double total = 0.0;
@@ -35,16 +49,14 @@ public class Module {
 		return finalAverageGrade;
 	}
 	
-	// Adds a student record to the module
+	/** 
+	 * Adds a student record to the module.
+	 * @param newRecord Studentrecord to add to records array.
+	 */
 	public void addRecord(StudentRecord newRecord) {
 		StudentRecord[] newRecords = Arrays.copyOf(this.records, this.records.length + 1);
 		newRecords[newRecords.length - 1] = newRecord;
 		this.records = newRecords;
-	}
-	
-	public void variableTester() {
-		System.out.println(year);
-		System.out.println(term);
 	}
 	
 	public int getYear(){
@@ -53,8 +65,6 @@ public class Module {
 	public byte getTerm(){
 		return term;
 	}
-	
-	
 	public String getModuleCode(){
 		String moduleCode = module.getModuleCode();
 		return moduleCode;

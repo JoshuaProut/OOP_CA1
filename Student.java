@@ -1,6 +1,9 @@
-
-
 import java.util.Arrays;
+
+/**
+ * Represents a student at the university, contains their id, name, gender(optional),
+ * grade point average and their records for each module 
+ */
 
 public class Student {
 
@@ -14,20 +17,66 @@ public class Student {
 
 	private StudentRecord[] records;
 
-	public Student(int id, String name, char gender) {
+	/**
+	 * Constructor for student with gender
+	 *
+	 * @param id
+	 * @param name
+	 * @param gender must be M, F, or X. No gender can also be given using the other constructor
+	 * @param uni is passed so that the constructor can check that the id doesn't exist in the university already
+	 */
 
-		// TODO university.checkID()
-		// id, name and gender validation
-		// TODO accept empty gender variable
+	public Student(int id, String name, char gender, University uni) {
+
+		// Checks that the ID is unique for the university it has been submitted for
+		if (uni.checkId(id) == true) {
+			throw new IllegalArgumentException("ID must be unique");
+		}
+
+		//Checks that name isn't empty
 		if (name.isEmpty()) {
 			throw new IllegalArgumentException("Name cannot be empty");
-		} else if (gender == 'B') {
+		}
+
+		//Checks that gender is one of the recognised characters
+		else if (gender != 'M' && gender!= 'F' && gender != 'X') {
 			throw new IllegalArgumentException("Not a valid gender choice");
 		}
+		
+		// Initializes variables
 		this.id = id;
 		this.name = name;
 		this.gender = gender;
 		
+		// Initilizes blank records array, to be added to later
+		StudentRecord[] newArray = {};
+		this.records = newArray;
+	}
+	
+	/** 
+	 * Constructor for student without gender
+	 * @param id
+	 * @param name
+	 * @param uni is passed so that the constructor can check that the id doesn't exist in the university already
+	 */
+	public Student(int id, String name, University uni) {
+
+		// Validates that the ID is unique for the university it has been submitted for
+		if (uni.checkId(id) == true) {
+			throw new IllegalArgumentException("ID must be unique");
+		}
+		
+		//Validates that name isn't empty
+		if (name.isEmpty()) {
+			throw new IllegalArgumentException("Name cannot be empty");
+		}
+	
+		
+		// Initializes variables
+		this.id = id;
+		this.name = name;
+		
+		// Initilizes blank records array, to be added to later
 		StudentRecord[] newArray = {};
 		this.records = newArray;
 	}
@@ -53,14 +102,14 @@ public class Student {
 			total += finalScore;
 			count++;
 		}
+		
 		this.gpa = total / count;
 	}
 
 	/** 
 	*Returns transcript for student
 	*@return String formatted script containing 
-	*/ 
-	
+	*/
 	public String printTranscript() {
 		//Creates initial part of transcript
 		String script = "University of Knowledge Official Transcript\n\n\nID: " 
@@ -94,11 +143,14 @@ public class Student {
 		return name;
 	}
 	
-	//Object variable tester
-	public void printAll() {
-		System.out.println(id);
-		System.out.println(name);
-		System.out.println(gender);
+	/**
+	 * Invokes the setAboveAverage method for each record, to find if the student is above average
+	 * in that module.
+	 */
+	public void setAboveAverage(){
+		for (StudentRecord record: records) {
+			record.setAboveAverage();
+		}
 	}
 	
 }

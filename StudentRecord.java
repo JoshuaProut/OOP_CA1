@@ -12,11 +12,23 @@ public class StudentRecord {
 	
 	private Boolean isAboveAverage;
 
+	/**
+	 * Constructor for Student Record
+	 *@param student
+	 *@param module
+	 *@param marks each mark must be between 0 and 100
+	 */
 	public StudentRecord(Student student, Module module, double[] marks) {
 		
-		this.student = student;
-		this.module = module;
-		this.marks = marks;
+		
+		// Validates that each mark is between 0 and 100
+		for (double mark : marks) {
+			if(mark > 100 || mark < 0) {
+				throw new IllegalArgumentException("Each mark must be between 0 and 100");
+			}
+		}
+		
+		
 		
 		// Calculates final score
 		double total = 0.0;
@@ -25,10 +37,17 @@ public class StudentRecord {
 			total += score;
 			count++;
 		}
-			
+		
+		// Inits variables
+		this.student = student;
+		this.module = module;
+		this.marks = marks;
 		this.finalScore = total/count;
 	}
-	// Calculates if the student is above average
+	
+	/**
+	 * Calculates if the student is above average for the module
+	 */
 	public void setAboveAverage(){
 		if (this.finalScore > module.getFinalAverageGrade()){
 			this.isAboveAverage = true;

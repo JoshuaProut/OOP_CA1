@@ -1,13 +1,13 @@
 /**
- * @author Joshua Prout jnp207@exeter.ac.uk
+ * @
  */
-
-
-
 import java.util.Arrays;
 import java.util.Scanner;
 
-
+/**
+ * This is the main class for the university data management app.
+ * @author Joshua Prout jnp207@exeter.ac.uk
+ */
 
 public class University {
 
@@ -17,7 +17,11 @@ public class University {
 	
 	private Module[] modules;
 
-
+	/**
+	 *Constructor for university class.
+	 *<p>
+	 *Takes no parameters, arrays are filled later
+	 */
 	public University(){
 		ModuleDescriptor[] blankDescriptor = {};
 		Student[] blankStudents = {};
@@ -29,7 +33,8 @@ public class University {
 	}
 	
 	/**
-	 *@param ModuleDescriptor NewModuleDesc, adds new module descriptor to array
+	 *Adds new module descriptor to module descriptors array.
+	 *@param NewModuleDesc New module descriptor to add to array
 	 */
 	public void addModuleDescriptor(ModuleDescriptor newModuleDesc){
 		ModuleDescriptor[] newModuleDescs = Arrays.copyOf(this.moduleDescriptors, this.moduleDescriptors.length + 1);
@@ -38,7 +43,8 @@ public class University {
 	}
 	
 	/**
-	 *@param Student newStuden, adds new student to array
+	 * Adds new student to students array.
+	 * @param Student newStudent, adds new student to array
 	 */
 	public void addStudent(Student newStudent) {
 		Student[] newStudents = Arrays.copyOf(this.students, this.students.length + 1);
@@ -47,7 +53,8 @@ public class University {
 	}
 	
 	/**
-	 *@param Module NewModule, adds new module to array
+	 * Adds new module to the array
+	 * @param Module NewModule, adds new module to array
 	 */
 	public void addModule(Module newModule) {
 		Module[] newModules = Arrays.copyOf(this.modules, this.modules.length + 1);
@@ -56,7 +63,8 @@ public class University {
 	}
 	
 	/**
-	 * @return The number of students registered in the system.
+	 * Returns number of students in the university system
+	 * @return numberOfStudents The number of students registered in the system.
 	 */
 	public int getTotalNumberStudents() {
 		
@@ -64,6 +72,7 @@ public class University {
 	}
 
 	/**
+	 * Returns student with the highest GPA
 	 * @return The student with the highest GPA.
 	 */
 	public Student getBestStudent() {
@@ -90,7 +99,11 @@ public class University {
 		return highestModule;
 	}
 	
-	public boolean isIDUnique(int theId) {
+	/**
+	 * Checks if ID has already been taken by another student in the system
+	 * @return true if ID is not available
+	 */
+	public boolean checkId(int theId) {
 		
 		boolean found = false;
 		for(Student student : students) {
@@ -102,7 +115,10 @@ public class University {
 		}	
 		return found;
 	}		
-		
+	
+	/**
+	 *@return the student with the given ID
+	 */
 	public Student getStudentById(int theId){
 		
 		for (Student student: students) {
@@ -113,6 +129,26 @@ public class University {
 		return null;
 	}
 	
+	/**
+	 * Calls the updateAboveAverage method for each student.
+	 *
+	 * This will compare their score for each student record against the average for
+	 * the module
+	 */
+	public void updateAboveAverage(){
+		for (Student student: students) {
+			student.setAboveAverage();
+		}
+	}
+	
+	/** 
+	 * Creates university object, and inputs and outputs data.
+	 *
+	 * Creates a university object, to which the data will be added to
+	 * Creates Module Descriptors and adds to array, creates Students and adds to array,
+	 * creates modules and adds to array, then creates and adds student records to the
+	 * module and student objects
+	 */
 	public static void main(String[] args) {
 		// TODO - needs to be implemented
 		University uni = new University();
@@ -134,22 +170,16 @@ public class University {
 		uni.addModuleDescriptor(PHY2023);
 			
 		// Creates students and adds to array
-		uni.addStudent(new Student(1000, "Ana", 'F'));
-		uni.addStudent(new Student(1001, "Oliver", 'M'));
-		uni.addStudent(new Student(1002, "Mary", 'F'));
-		uni.addStudent(new Student(1003, "John", 'M'));
-		uni.addStudent(new Student(1004, "Noah", 'M'));
-		uni.addStudent(new Student(1005, "Chico", 'M'));
-		uni.addStudent(new Student(1006, "Maria", 'F'));
-		uni.addStudent(new Student(1007, "Mark", 'X'));
-		uni.addStudent(new Student(1008, "Lia", 'F'));
-		uni.addStudent(new Student(1009, "Rachel", 'F'));
-		
-		
-		// Tests get student by ID
-		Student foundStudent = uni.getStudentById(1000);
-		System.out.println(foundStudent.getName());
-		
+		uni.addStudent(new Student(1000, "Ana", 'F', uni));
+		uni.addStudent(new Student(1001, "Oliver", 'M', uni));
+		uni.addStudent(new Student(1002, "Mary", 'F', uni));
+		uni.addStudent(new Student(1003, "John", 'M', uni));
+		uni.addStudent(new Student(1004, "Noah", 'M', uni));
+		uni.addStudent(new Student(1005, "Chico", 'M', uni));
+		uni.addStudent(new Student(1006, "Maria", 'F', uni));
+		uni.addStudent(new Student(1007, "Mark", 'X', uni));
+		uni.addStudent(new Student(1008, "Lia", 'F', uni));
+		uni.addStudent(new Student(1009, "Rachel", 'F', uni));
 		
 		// Adds student records
 		
@@ -352,9 +382,17 @@ public class University {
 		module.addRecord(record);
 		student.addRecord(record);
 		
-		//Prints student transcript
+		// Calculates if each student is above average
+		uni.updateAboveAverage();
+		
+		
+		//Prints student transcripts
 		String script = uni.getStudentById(1000).printTranscript();
 		System.out.println(script);
+	
+		for(Student thestudent: uni.students) {
+			System.out.println(thestudent.printTranscript());
+		}
 		
 		//Prints best student
 		Student bestStudent = uni.getBestStudent();
