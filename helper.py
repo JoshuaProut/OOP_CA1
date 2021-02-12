@@ -15,8 +15,10 @@ for line in lines:
     
     #print(CA_weights)
 
-    out_string = "uni.addModuleDescriptor(new ModuleDescriptor(\"{}\", \"{}\", new double[] {}));".format(module_name, module_code, CA_weights)
+    out_string = "ModuleDescriptor {} = new ModuleDescriptor(\"{}\", \"{}\", new double[] {});".format(module_code, module_code, module_name, CA_weights)
+    #out_string = "uni.addModuleDescriptor({})".format(module_code)
     print(out_string)
+
 
 
 with open("Students.csv","r") as file:
@@ -43,18 +45,19 @@ for line in lines:
     line_split = line.split(", ")
     #print(line_split)
     ID = line_split[0]
-    marks = line_split[3]
+    marks = line_split[4]
     marks = marks.replace("[","{")
     marks = marks.replace("]","}")
     marks = marks.replace(" \n","")
 
-    out_string1 = "student = uni.getStudentByID({});".format(ID)
-    out_string2 = "module.addRecord(student, module, {}));".format(marks)
-    out_string3 = "student.addRecord(student, module, {}));".format(marks)
+    out_string1 = "student = uni.getStudentBy({});".format(ID)
+    out_string2 = "record = new StudentRecord(student, module, new double[]{});".format(marks) 
+    out_string3 = "module.addRecord(record);".format(marks)
+    out_string4= "student.addRecord(record);".format(marks)
     print(out_string1)
     print(out_string2)
     print(out_string3)
-
+    print(out_string4)
     
 
 
