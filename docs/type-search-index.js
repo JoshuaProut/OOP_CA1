@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"joshuaprout","l":"Module"},{"p":"joshuaprout","l":"ModuleDescriptor"},{"p":"joshuaprout","l":"Student"},{"p":"joshuaprout","l":"StudentRecord"},{"p":"<Unnamed>","l":"test"},{"p":"joshuaprout","l":"University"}];updateSearchResults();
