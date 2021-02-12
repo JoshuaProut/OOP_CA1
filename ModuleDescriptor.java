@@ -1,6 +1,4 @@
-package joshuaprout;
 
-import joshuaprout.*;
 /**
  * Describes a module, contains its code, name and the weights of its controlled assesments.
  */

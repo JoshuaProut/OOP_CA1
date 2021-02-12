@@ -1,6 +1,3 @@
-package joshuaprout;
-
-import joshuaprout.*;
 
 /**
  * This class represents a student's record within a module, containing their marks, average
